@@ -2,6 +2,7 @@ let util = require('util')
 let path = require('path')
 let { spawn } = require('child_process')
 
+// Font By MFarelS:V
 let fontPath = 'src/font/Zahraaa.ttf'
 let handler  = async (m, { conn, args }) => {
   let inputPath ='src/kertas/magernulis1.jpg'
@@ -14,9 +15,7 @@ let handler  = async (m, { conn, args }) => {
   spawn('convert', [
     inputPath,
     '-font',
-    fontPath, 
-    '-fill', 
-    'blue', 
+    fontPath,
     '-size',
     '1024x784',
     '-pointsize',
@@ -28,8 +27,6 @@ let handler  = async (m, { conn, args }) => {
     hari,
     '-font',
     fontPath,
-    '-fill', 
-    'blue', 
     '-size',
     '1024x784',
     '-pointsize',
@@ -40,9 +37,7 @@ let handler  = async (m, { conn, args }) => {
     '+806+102',
     tgl,
     '-font',
-    fontPath, 
-    '-fill', 
-    'blue', 
+    fontPath,
     '-size',
     '1024x784',
     '-pointsize',
@@ -56,11 +51,11 @@ let handler  = async (m, { conn, args }) => {
   ])
   .on('error', e => conn.reply(m.chat, util.format(e), m))
   .on('exit', () => {
-    conn.sendFile(m.chat, outputPath, 'nulis.jpg', 'Made by Samu330:v', m)
+    conn.sendFile(m.chat, outputPath, 'nulis.jpg', 'oo', m)
   })
 }
-handler.help = ['n'].map(v => v + 'ulis2 <texto>')
-handler.tags = ['tools']
+handler.help = ['n'].map(v => v + 'ulis2 <teks>')
+handler.tags = ['nulis']
 handler.command = /^nulis2$/i
 handler.owner = false
 handler.mods = false
@@ -74,3 +69,6 @@ handler.botAdmin = false
 handler.fail = null
 
 module.exports = handler
+
+// BY MFARELS NJEENK
+// https://GitHub.com/MFarelS/
